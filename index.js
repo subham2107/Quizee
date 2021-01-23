@@ -49,7 +49,7 @@ function displayOptions(i)
 
 function validateResponse(userResponse)
 {
-   if(userResponse==1 || userResponse==2 || userResponse==3 || userResponse==4)
+   if(userResponse===1 || userResponse===2 || userResponse===3 || userResponse===4)
      return true;
    else
      return false;
@@ -62,10 +62,10 @@ function logic()
    {
      displayQuestions(i);
      displayOptions(i);
-     const userResponse = readLineSync.question('\nEnter your option: ');
+     const userResponse = parseInt(readLineSync.question('\nEnter your option: '));
      if(validateResponse(userResponse))
      {
-       if(userResponse==questions[i].answer)
+       if(userResponse===questions[i].answer)
          {
            console.log('Correct Answer\n');
            score+=1;
