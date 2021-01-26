@@ -29,7 +29,8 @@ console.log(`\nHello ${name}, welcome to Quizee !! Good to see you.Lets begin..\
    question : 'What was the name of Harry Potter’s pet owl?',
    options : ['Dobby','Nimbus','Hedwig','Fenwick'],
    answer : 3
-   }];
+   }
+   ];
 
 let points = logic();
 console.log(displayResults(points));
@@ -41,7 +42,7 @@ function displayQuestions(i)
 
 function displayOptions(i)
 {
-   for(let optionIndex=0;optionIndex<4;optionIndex++)
+   for(let optionIndex=0;optionIndex<questions[i].options.length;optionIndex++)
   {
      console.log(`${optionIndex+1}. ${questions[i].options[optionIndex]}`);
   }
@@ -77,10 +78,10 @@ function logic()
          }
       }
       else
-       {
-         console.log('\nPlease enter valid option (1/2/3/4) next time.\n');
-       }
-  }
+      {
+         console.log('\nPlease enter valid option (based on the option numbers given) next time.\n');
+      }
+    }
 return score;
 }
 
